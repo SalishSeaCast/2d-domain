@@ -35,7 +35,7 @@
 !-----------------------------------------------------------------------
     nbdysege = 0    ! east boundary segments (0=closed)
     nbdysegw = 1    ! west boundary segments
-    jpiwob   = 1    ! i-index for segment
+    jpiwob   = 2    ! i-index for segment
     jpjwdt   = 1    ! j-index for segment beginning
     jpjwft   = 10   ! j-index for segment end
     nbdysegn = 0    ! north boundary segments (0=closed)
