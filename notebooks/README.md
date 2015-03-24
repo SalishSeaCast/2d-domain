@@ -24,6 +24,14 @@ Descriptions below the links are from the first cell of the notebooks
     
     This notebook generates a tidal forcing for 2D domain.  
 
+* ##[Generate_rivers_forcing.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_rivers_forcing.ipynb)  
+    
+    A notebook to generate a river forcing. Constant Fraser river outflow 2000m^3/s.  
+      
+    Based on /data/nsoontie/MEOPAR/NEMO-forcing/rivers/Fraser_only_cnst.nc  
+      
+
+
 * ##[Generate_2D_bathy.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_bathy.ipynb)  
     
     The notebook will generate a two-dimensional bathymetry along the thalweg for simulation runs.  
