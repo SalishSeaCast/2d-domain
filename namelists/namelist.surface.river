@@ -55,13 +55,13 @@
 !-----------------------------------------------------------------------
 !              !  file name         ! freq (hr)  ! variable  !  time  !  clim  ! period  ! weights  ! rotation !
 !              !                    ! (<0 == mo) !   name    ! interp !  (T/F) !         ! filename ! pairing  !
-   sn_rnf      = 'river_cnst',       -12,          'rorunoff', .false., .true.,  'yearly', '',        ''
-   sn_cnf      = 'runoff_1m_nomask',   0,          'socoefr0', .false., .true.,  'yearly', '',        ''
-   sn_s_rnf    = '',                  24,          'rosaline', .false., .true.,  'yearly', '',        ''
-   sn_t_rnf    = '',                  24,          'rotemper', .false., .true.,  'yearly', '',        ''
-   sn_dep_rnf  = 'rivers_month',     -12,          'rodepth' , .false.  .true.,  'yearly', '',        ''
+   sn_rnf      = 'river_cnst',     -12,           'rorunoff', .false.,  .true.,  'yearly', '',        ''
+   sn_cnf      = 'runoff_1m_nomask',  0,          'socoefr0', .false., .true.,  'yearly', '',        ''
+   sn_s_rnf    = '',                 24,          'rosaline', .false., .true.,  'yearly', '',        ''
+   sn_t_rnf    = '',                 24,          'rotemper', .false., .true.,  'yearly', '',        ''
+   sn_dep_rnf  = 'river_cnst',     -12,          'rodepth' , .false.,  .true.,  'yearly', '',        ''
 
-   cn_dir       = '/data/nsoontie/MEOPAR/2Ddomain/'  ! directory containing rivers run-off forcing files
+   cn_dir       = 'rivers/'  ! directory containing rivers run-off forcing files
    ln_rnf_emp   = .false.    ! runoffs included into precipitation field (T) or into a file (F)
    ln_rnf_mouth = .false.    ! specific treatment at rivers mouths
    rn_hrnf      =  15.e0     ! depth over which enhanced vertical mixing is used
