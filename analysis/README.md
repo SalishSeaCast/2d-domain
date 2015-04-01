@@ -5,11 +5,11 @@ The links below are to static renderings of the notebooks via
 Descriptions below the links are from the first cell of the notebooks
 (if that cell contains Markdown or raw text).
 
-* ##[CompareTwo.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/CompareTwo.ipynb)  
+* ##[CompareTwo.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareTwo.ipynb)  
     
     Notebook to comapre stratificaiton and currents between two simulations. Will aid in interpreting effect of parameter changes.  
 
-* ##[ExamineOne.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/ExamineOne.ipynb)  
+* ##[ExamineOne.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/ExamineOne.ipynb)  
     
     Notebook to quickly examine one simulation  
 
