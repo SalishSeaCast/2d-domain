@@ -43,7 +43,7 @@ namelists:
   - namelist.time
   - namelist.domain.uniform
   - namelist.surface
-  - namelist.lateral.noBC
+  - namelist.lateral.uniform
   - namelist.bottom
   - namelist.tracers
   - namelist.dynamics
