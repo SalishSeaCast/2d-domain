@@ -16,8 +16,8 @@
 config_name: SalishSea2D
 
 # For runs on systems that use qsub/PBS/TORQUE; e.g. Westgrid
-run_id: example
-walltime: 10:00:00
+run_id: uniform
+walltime: 15:00:00
 
 paths:
   # If relative, paths are taken from current directory
@@ -36,14 +36,14 @@ forcing:
   # The path and name of a restart file may be used as initial conditions
   initial conditions: /data/nsoontie/MEOPAR/2Ddomain/
   open boundaries: open_boundaries/
-  rivers: rivers/
+  rivers: /data/nsoontie/MEOPAR/2Ddomain
 
 namelists:
   # If relative, paths are taken from current directory
-  - namelist.time
+  - namelist.time.1month
   - namelist.domain.uniform
-  - namelist.surface
-  - namelist.lateral.uniform
+  - namelist.surface.river
+  - namelist.lateral
   - namelist.bottom
   - namelist.tracers
   - namelist.dynamics
