@@ -29,6 +29,7 @@
           <field ref="woce" name="vovecrtz"/>
 	  <field ref="avt" name="ve_eddy_diff"/>
 	  <field ref="avm" name="ve_eddy_visc"/>
+      <field ref="eps" name="dissipation"/>
         </file>
         <file id="Tidal_Harmonics_eta" enabled=".false.">
           <field ref="K1x" name="K1_eta_real"/>
@@ -524,6 +525,7 @@
         <!-- woce_eiv: available with key_trabbl_adv -->
         <field id="avt"          description="vertical eddy diffusivity"                   unit="m2/s"                 />
         <field id="avm"          description="vertical eddy viscosity"                     unit="m2/s"                 />
+        <field id="eps"          description="turbulent kinetic energy dissipation rate"   unit="m2/s3"                />
         <!-- avs: available with key_zdfddm -->
         <field id="avs"          description="salt vertical eddy diffusivity"              unit="m2/s"                 />
         <!-- avt_evd and avm_evd: available with ln_zdfevd -->
