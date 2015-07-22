@@ -1,0 +1,83 @@
+!!======================================================================
+!!            ***  Surface Boundary Condition namelists  ***
+!!
+!! sets boundary conditions for surface features.  Note that this file
+!! only includes the subset of namelists we use and furthermore only
+!! the variables we typically change.
+!!======================================================================
+!! Included namelists:
+!!   namsbc          surface boundary condition
+!!   namsbc_ana      analytical         formulation
+!!   namsbc_core     CORE bulk formulae formulation
+!!   namtra_qsr      penetrative solar radiation
+!!   namsbc_rnf      river runoffs
+!!   namsbc_apr      Atmospheric Pressure
+!!======================================================================
+!! Not included namelists:
+!!   namsbc_flx      flux               formulation
+!!   namsbc_clio     CLIO bulk formulae formulation
+!!   namsbc_mfs      MFS  bulk formulae formulation
+!!   namsbc_cpl      CouPLed            formulation             ("key_coupled")
+!!   namsbc_sas      StAndalone Surface module
+!!   namsbc_isf      ice shelf melting/freezing
+!!   namsbc_ssr      sea surface restoring term (for T and/or S)
+!!   namsbc_alb      albedo parameters
+!!   namsbc_wave     external fields from wave model
+!!======================================================================
+!!
+!-----------------------------------------------------------------------
+!!
+&namsbc        !   Surface Boundary Condition (surface module)
+!-----------------------------------------------------------------------
+   nn_fsbc     =  1        !  frequency of surface boundary condition computation
+                           !     (also = the frequency of sea-ice model call)
+   ln_ana      = .true.   !  analytical formulation                    (T => fill namsbc_ana )
+   ln_blk_core = .false.    !  CORE bulk formulation                     (T => fill namsbc_core)
+   ln_apr_dyn  = .false.   !  Patm gradient added in ocean & ice Eqs.   (T => fill namsbc_apr )
+   nn_ice      = 0        !  =0 no ice boundary condition   ,
+                           !  =1 use observed ice-cover      ,
+                           !  =2 ice-model used                         ("key_lim3" or "key_lim2")
+   ln_rnf      = .true.    !  runoffs                                   (T   => fill namsbc_rnf)
+   ln_ssr      = .false. !  Sea Surface Restoring on T and/or S       (T => fill namsbc_ssr)
+   nn_fwb      = 0      !  FreshWater Budget: =0 unchecked
+                        !     =1 global mean of e-p-r set to zero at each time step
+                        !     =2 annual global mean of e-p-r set to zero
+/
+!-----------------------------------------------------------------------
+&namsbc_ana    !   analytical surface boundary condition
+!-----------------------------------------------------------------------
+   rn_utau0    =   0.e0    !  uniform value for the i-stress
+/
+
+/
+!-----------------------------------------------------------------------
+&namtra_qsr    !   penetrative solar radiation
+!-----------------------------------------------------------------------
+   ln_qsr_rgb  = .false.    !  RGB (Red-Green-Blue) light penetration
+   ln_qsr_2bd  = .true.   !  2 bands              light penetration
+   nn_chldta   = 0    !  RGB : Chl data (=1) or cst value (=0)
+/
+!-----------------------------------------------------------------------
+&namsbc_rnf    !   runoffs namelist surface boundary condition
+!-----------------------------------------------------------------------
+!              !  file name       ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
+!              !                  !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
+   sn_rnf      = 'rivers_cnst',      -1,               'rorunoff',    .false.,      .true.,  'yearly', '',        ''
+   sn_cnf      = 'runoff_1m_nomask',   0,              'socoefr0',    .false.,     .true.,  'yearly', '',        ''
+   sn_s_rnf    = '',                   24,             'rosaline',    .false.,     .true.,  'yearly', '',        ''
+   sn_t_rnf    = '',                   24,             'rotemper',    .false.,     .true.,  'yearly', '',        ''
+   sn_dep_rnf  = 'rivers_cnst',       -1,              'rodepth' ,   .true.,      .true.,  'yearly', '',        ''
+   cn_dir       = 'rivers/'   !  root directory for the location of the runoff files
+   ln_rnf_mouth = .false.    !  specific treatment at rivers mouths
+   ln_rnf_depth = .true.     !  read in depth information for runoff
+   ln_rnf_tem   = .false.   !  read in temperature information for runoff
+   ln_rnf_sal   = .false.   !  read in salinity information for runoff
+&end
+
+
+&namberg
+&end
+
+
+
+
