@@ -39,8 +39,8 @@
 !-----------------------------------------------------------------------
     ctypebdy = 'W'
     nbdyind   = 2    ! i-index for segment
-    nbdybeg   = 1    ! j-index for segment beginning
-    nbdyend   = 10   ! j-index for segment end
+    nbdybeg   = 2    ! j-index for segment beginning
+    nbdyend   = 9   ! j-index for segment end
 &end
 
 &nambdy_dta      !  open boundaries - external data           ("key_bdy")
