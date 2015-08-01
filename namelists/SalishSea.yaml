@@ -40,11 +40,11 @@ forcing:
 
 namelists:
   # If relative, paths are taken from current directory
-  - namelist.time.1month
+  - namelist.time
   - namelist.domain
-  - namelist.surface
+  - namelist.surface.river
   - namelist.lateral
   - namelist.bottom
   - namelist.tracers
   - namelist.dynamics
-  - namelist.compute.4core
+  - namelist.compute.8core
