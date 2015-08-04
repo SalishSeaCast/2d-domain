@@ -60,7 +60,7 @@
 
 &nambdy_tide     ! tidal forcing at open boundaries
 !-----------------------------------------------------------------------
-   filtide       = '/data/nsoontie/MEOPAR/2Ddomain/Salish2D_'
+   filtide       = '/data/nsoontie/MEOPAR/2Ddomain/Salish2D_3.6_'
    ln_bdytide_conj = .false.
 &end
 
