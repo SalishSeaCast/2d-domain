@@ -30,7 +30,7 @@
     nn_dyn3d_dta  =  0                   !  = 0, bdy data are equal to the initial state
                                           !  = 1, bdy data are read in 'bdydata   .nc' files
     cn_tra        =  'frs'                !
-    nn_tra_dta    =  0                    !  = 0, bdy data are equal to the initial state
+    nn_tra_dta    =  1                    !  = 0, bdy data are equal to the initial state
                                           !  = 1, bdy data are read in 'bdydata   .nc' files
     nn_rimwidth   = 10
 &end
@@ -52,10 +52,10 @@
    bn_v2d = 'ssh/ssh',   1,        'vobtcrty', .true.,  .false.,  'monthly',  '',        ''
    bn_u3d = '',                      24,        'vozocrtx', .true.,  .false., 'daily',   '',        ''
    bn_v3d = '',                      24,        'vomecrty', .true.,  .false., 'daily',   '',        ''
-   bn_tem = 'SalishSea2_Masson_DC', 168,        'votemper', .true.,  .true.,  'yearly',  '',        ''
-   bn_sal = 'SalishSea2_Masson_DC', 168,        'vosaline', .true.,  .true.,  'yearly',  '',        ''
+   bn_tem = 'TS_OBC', 168,        'votemper', .true.,  .true.,  'yearly',  '',        ''
+   bn_sal = 'TS_OBC.', 168,        'vosaline', .true.,  .true.,  'yearly',  '',        ''
 
-   cn_dir = 'open_boundaries/west/'
+   cn_dir = 'boundary_conditions/'
 &end
 
 &nambdy_tide     ! tidal forcing at open boundaries
