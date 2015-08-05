@@ -53,7 +53,7 @@
    bn_u3d = '',                      24,        'vozocrtx', .true.,  .false., 'daily',   '',        ''
    bn_v3d = '',                      24,        'vomecrty', .true.,  .false., 'daily',   '',        ''
    bn_tem = 'TS_OBC', 168,        'votemper', .true.,  .true.,  'yearly',  '',        ''
-   bn_sal = 'TS_OBC.', 168,        'vosaline', .true.,  .true.,  'yearly',  '',        ''
+   bn_sal = 'TS_OBC', 168,        'vosaline', .true.,  .true.,  'yearly',  '',        ''
 
    cn_dir = 'boundary_conditions/'
 &end
