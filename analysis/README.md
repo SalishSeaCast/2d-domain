@@ -13,6 +13,14 @@ Descriptions below the links are from the first cell of the notebooks
     
     Notebook to quickly examine one simulation  
 
+* ##[3.4 Test.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/3.4 Test.ipynb)  
+    
+    Notebook to examined 3.6 test runs  
+
+* ##[3.6 Test.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/3.6 Test.ipynb)  
+    
+    Notebook to examined 3.6 test runs  
+
 
 ##License
 
