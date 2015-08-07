@@ -15,6 +15,12 @@
    rdttideramp   =    0.    !
    clname(1)     =   'M2'   !  name of constituent
    clname(2)     =   'K1'
+   clname(3)     =   'S2'
+   clname(4)     =   'O1'
+   clname(5)     =   'N2'
+   clname(6)     =   'P1'
+   clname(7)     =   'K2'
+   clname(8)     =   'Q1'
 &end
 
 &nambdy        !  unstructured open boundaries                          ("key_bdy")
