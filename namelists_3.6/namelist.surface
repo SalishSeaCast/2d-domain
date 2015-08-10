@@ -46,7 +46,7 @@
 !-----------------------------------------------------------------------
 &namsbc_ana    !   analytical surface boundary condition
 !-----------------------------------------------------------------------
-   rn_utau0    =   0.e0    !  uniform value for the i-stress
+   rn_utau0    =   0.5    !  uniform value for the i-stress
 /
 
 /
