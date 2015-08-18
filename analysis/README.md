@@ -5,6 +5,11 @@ The links below are to static renderings of the notebooks via
 Descriptions below the links are from the first cell of the notebooks
 (if that cell contains Markdown or raw text).
 
+* ##[Exploring Froude Number.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/Exploring Froude Number.ipynb)  
+    
+    This notebook will develop a procudure for defining a Froude number.  
+
+
 * ##[CompareTwo.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareTwo.ipynb)  
     
     Notebook to comapre stratificaiton and currents between two simulations. Will aid in interpreting effect of parameter changes.  
