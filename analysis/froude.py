@@ -5,6 +5,7 @@
 
 import numpy as np
 import datetime
+
 from salishsea_tools.nowcast import analyze
 
 
@@ -146,7 +147,8 @@ def calculate_froude_number(n2, rho, u, deps, depsU, n2_thres=5e-6):
     deps is the depth array
     depsU is the depth array at U poinnts
 
-    returns the Froude number for each x-index
+    returns: Fr, c, u_avg - the Froude number, wave speed, and depth averaged
+    velocity for each x-index
     """
 
     # calculate mixed layers
@@ -159,7 +161,7 @@ def calculate_froude_number(n2, rho, u, deps, depsU, n2_thres=5e-6):
     # Froude numer
     Fr = np.abs(u_avg)/c
 
-    return Fr
+    return Fr, c, u_avg
 
 
 def froude_time_series(n2, rho, u, deps, depsU, times, time_origin,
@@ -175,17 +177,59 @@ def froude_time_series(n2, rho, u, deps, depsU, times, time_origin,
 
     xmin,xmax define the averaging area
 
-    returns the Froude number for each time associated with dates
+    returns: Frs, cs, u_avgs, dates
+    the Froude number, internal wave speed, and depth averaged current
+    for each time associated with dates
 
     """
 
     Frs = []
+    cs = []
+    u_avgs = []
     dates = []
     for t in np.arange(n2.shape[0]):
-        Fr = calculate_froude_number(n2[t, ...], rho[t, ...], u[t, ...],
-                                     deps, depsU, n2_thres=n2_thres)
-        Fr = np.mean(Fr[xmin:xmax+1])
-        Frs.append(Fr)
+        Fr, c, u_avg = calculate_froude_number(n2[t, ...], rho[t, ...],
+                                               u[t, ...], deps, depsU,
+                                               n2_thres=n2_thres)
+        Frs.append(np.mean(Fr[xmin:xmax+1]))
+        cs.append(np.mean(c[xmin:xmax+1]))
+        u_avgs.append(np.mean(u_avg[xmin:xmax+1]))
         dates.append(time_origin + datetime.timedelta(seconds=times[t]))
 
-    return Frs, dates
+    return Frs, cs, u_avgs, dates
+
+
+def calculate_buoyancy_frequency(temp, sal, e3, depth_axis=1):
+    """ Calculate the squared buoyancy frequency (n2) given temperature and
+    salinity profiles. N2 is set to  g*drho/dz/rho. Note that NEMO uses a defini    tion based on an question of state:   g* (alpha dk[T] + beta dk[S] ) / e3w
+
+    temp and sal are the temperature and salinity arrays
+    e3 is an array of the vertical scale factors (grid spacing). Use e3w for
+    constistency with NEMO.
+    depth_axis defines the axis which corresponds to depth in the temp/sal
+    arrays
+
+    returns n2, an array of square buoyancy frequency at each point in temp/sal.
+    """
+
+    # acceleration due to gravity
+    g = 9.80665
+
+    # First calculate density.
+    rho = calculate_density(temp, sal)
+
+    # Density gradient
+    drho = np.zeros(rho.shape)
+    # roll depth axis in rho and drho to first axis
+    # assume e3 already has depth axis in first axis
+    drho_r = np.rollaxis(drho, depth_axis)
+    rho_r = np.rollaxis(rho, depth_axis)
+    for k in np.arange(1, drho.shape[depth_axis]-1):
+        drho_r[k, ...] = 1/e3[k, ...]*(rho_r[k+1, ...] - rho_r[k, ...])
+    # Unroll drho
+    drho = np.rollaxis(drho_r, 0, depth_axis+1)
+    rho = np.rollaxis(rho_r, 0, depth_axis+1)
+    # Define N2
+    n2 = g*drho/rho  # no negative because depth increases with increasking k
+
+    return n2
