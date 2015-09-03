@@ -46,9 +46,9 @@
    ppkth       = 12.
    ppacr       = 2.
    ldbletanh   = .TRUE.   ! do not use double tanh
-   ppa2        = 6.2
-   ppacr2      = 2.2.
-   ppkth2      = 12.
+   ppa2        = 6.7
+   ppacr2      = 2.2
+   ppkth2      = 13.
 
 ! stuff needed for 2D configuration
    jphgr_msh =    2  !  type of horizontal mesh
