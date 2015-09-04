@@ -1,0 +1,4 @@
+syntax: glob
+
+vertical_resolution/dbl_tanh/Salish2D_*
+vertical_resolution/dbl_tanh/mesh_mask.nc
