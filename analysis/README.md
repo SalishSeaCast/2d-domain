@@ -10,6 +10,14 @@ Descriptions below the links are from the first cell of the notebooks
     This notebook will develop a procudure for defining a Froude number.  
 
 
+* ##[Compare Froude.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/Compare Froude.ipynb)  
+    
+    A notebook to compare the Froude number between 2d and 3D runs.   
+
+* ##[CompareVerticalRes.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareVerticalRes.ipynb)  
+    
+    Notebook to comapre stratificaiton and currents between two simulations. Will aid in interpreting effect of parameter changes.  
+
 * ##[CompareTwo.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareTwo.ipynb)  
     
     Notebook to comapre stratificaiton and currents between two simulations. Will aid in interpreting effect of parameter changes.  
@@ -25,6 +33,10 @@ Descriptions below the links are from the first cell of the notebooks
 * ##[3.6 Test.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/3.6 Test.ipynb)  
     
     Notebook to examined 3.6 test runs  
+
+* ##[Testing Buoyancy Frequency.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/Testing Buoyancy Frequency.ipynb)  
+    
+    A notebook to test the calculation of the buuoyancy frequency as implemented in froude.py.  
 
 
 ##License
