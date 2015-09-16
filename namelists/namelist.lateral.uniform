@@ -1,0 +1,33 @@
+!! Lateral boundary conditions
+!!
+&namlbc        !   lateral momentum boundary condition
+!-----------------------------------------------------------------------
+   rn_shlat    =     0     !  shlat = 0  !  0 < shlat < 2  !  shlat = 2  !  2 < shlat
+                           !  free slip  !   partial slip  !   no slip   ! strong slip
+   ln_vorlat   = .false.   !  consistency of vorticity boundary condition with analytical eqs.
+&end
+
+!-----------------------------------------------------------------------
+&nambdy        !  unstructured open boundaries                          ("key_bdy")
+!-----------------------------------------------------------------------
+    nb_bdy         = 0                 ! number of open boundary sets
+    ln_coords_file = .false.           ! =T : read bdy coordinates from file
+    cn_coords_file = ''                ! bdy coordinates files
+    ln_mask_file   = .false.           ! =T : read mask from file
+    cn_mask_file   = ''                ! name of mask file (if ln_mask_file=.TRUE.)
+    nn_dyn2d       =  0                ! boundary conditions for barotropic fields
+    nn_dyn2d_dta   =  0                ! = 0, bdy data are equal to the initial state
+                                       ! = 1, bdy data are read in 'bdydata   .nc' files
+                                       ! = 2, use tidal harmonic forcing data from files
+                                       ! = 3, use external data AND tidal harmonic forcing
+    nn_dyn3d       =  0                ! boundary conditions for baroclinic velocities
+    nn_dyn3d_dta   =  0                ! = 0, bdy data are equal to the initial state
+                                       ! = 1, bdy data are read in 'bdydata   .nc' files
+    nn_tra         =  0                ! boundary conditions for T and S
+    nn_tra_dta     =  0                ! = 0, bdy data are equal to the initial state
+                                       ! = 1, bdy data are read in 'bdydata   .nc' files
+    nn_rimwidth    = 10                ! width of the relaxation zone
+    ln_vol         = .false.           ! total volume correction (see nn_volctl parameter)
+    nn_volctl      = 1                 ! = 0, the total water flux across open boundaries is zero
+&end
+
