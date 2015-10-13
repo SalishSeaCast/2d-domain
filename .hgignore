@@ -2,5 +2,5 @@ syntax: glob
 
 vertical_resolution/dbl_tanh/Salish2D_*
 vertical_resolution/dbl_tanh/mesh_mask.nc
-vertical_resolution/trpl_tanh/Salish2d_*
-vertical_resolution/trpl_tang/mesh_mask.nc
+vertical_resolution/trpl_tanh/Salish2D_*
+vertical_resolution/trpl_tanh/mesh_mask.nc
