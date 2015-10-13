@@ -14,9 +14,15 @@ Descriptions below the links are from the first cell of the notebooks
     
     A notebook to compare the Froude number between 2d and 3D runs.   
 
+* ##[CompareVerticalRes-trpl_tanh.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareVerticalRes-trpl_tanh.ipynb)  
+    
+    Compare stratification and mixing under different vertical resolution.  
+      
+    Susan's Triple tanh vs original  
+
 * ##[CompareVerticalRes.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareVerticalRes.ipynb)  
     
-    Notebook to comapre stratificaiton and currents between two simulations. Will aid in interpreting effect of parameter changes.  
+    Compare stratification and mixing under different vertical resolution  
 
 * ##[CompareTwo.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/analysis/CompareTwo.ipynb)  
     
