@@ -32,11 +32,12 @@ paths:
 grid:
   # If relative, paths are taken from the grid/ directory in the forcing
   # path above
-  coordinates: coordinates_seagrid_SalishSea.nc
+  coordinates: /dev/null
   bathymetry: bathy2D_36.nc
 
 forcing:
   # If relative, paths are taken from forcing path above
+  atmospheric: /ocean/sallen/allen/research/MEOPAR/Operational/
   initial conditions: initial_conditions/
   # The path and name of a restart file may be used as initial conditions
   # initial conditions: /ocean/dlatorne/MEOPAR/SalishSea/results/spin-up/8sep17sep/SalishSea_02825280_restart.nc
