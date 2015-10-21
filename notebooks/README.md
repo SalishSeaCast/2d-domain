@@ -5,9 +5,19 @@ The links below are to static renderings of the notebooks via
 Descriptions below the links are from the first cell of the notebooks
 (if that cell contains Markdown or raw text).
 
+* ##[Generate T+S Forcing - NEMO3.6.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate T+S Forcing - NEMO3.6.ipynb)  
+    
+    This notebook generates forcing files for the 2D domain.  
+      
+    Plan: use 3D boundary files, average across the mouth of Juan de Fuca and set uniformly across domain.   
+
 * ##[Generate_2D_T+S.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_T+S.ipynb)  
     
     This notebook generates a 2D initial condition file for the 2D domain.  
+
+* ##[Generate_2D_Tides-NEMO3.6.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_Tides-NEMO3.6.ipynb)  
+    
+    This notebook generates a tidal forcing for 2D domain in NEMO 3.6  
 
 * ##[Testing 2D mesh.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Testing 2D mesh.ipynb)  
     
@@ -20,9 +30,22 @@ Descriptions below the links are from the first cell of the notebooks
     The mesh_mask.nc file was generated with a failed run of the nemo.exe built with the SalishSea2D configuration and the bathymetry file set as bathy2D.nc  
 
 
+* ##[Changing Resolution.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Changing Resolution.ipynb)  
+    
+    This notebook outlines the steps needed to change the resolution of the 2D domain.  
+
+
 * ##[Generate_2D_Tides.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_Tides.ipynb)  
     
     This notebook generates a tidal forcing for 2D domain.  
+
+* ##[Generate_2D_bathy-NEMO3.6.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_bathy-NEMO3.6.ipynb)  
+    
+    The notebook will generate a two-dimensional bathymetry along the thalweg for simulation runs.  
+      
+    Two-dimensional simulations will allow us to quickly experiment with changes in resolution, mxing parameters etc  
+      
+    NEMO 3.6 is expecting obcs t start on a land/oean corner. This notebook will masked all of the edges.  
 
 * ##[Generate_rivers_forcing.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_rivers_forcing.ipynb)  
     
@@ -30,13 +53,22 @@ Descriptions below the links are from the first cell of the notebooks
       
     Based on /data/nsoontie/MEOPAR/NEMO-forcing/rivers/Fraser_only_cnst.nc  
       
-
+    Uses a runoff temperaure of 14 deg to avoid runaway temperatures.  
 
 * ##[Generate_2D_bathy.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_bathy.ipynb)  
     
     The notebook will generate a two-dimensional bathymetry along the thalweg for simulation runs.  
       
     Two-dimensional simulations will allow us to quickly experiment with changes in resolution, mxing parameters etc  
+
+* ##[Generate_2D_T+S-NEMO3.6.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Generate_2D_T+S-NEMO3.6.ipynb)  
+    
+    This notebook generates a 2D initial condition file for the 2D domain.  
+
+* ##[Changing Resolution-trpltanh.ipynb](http://nbviewer.ipython.org/urls/bitbucket.org/salishsea/2d-domain/raw/tip/notebooks/Changing Resolution-trpltanh.ipynb)  
+    
+    This notebook generates new boundary conditions and initial conditions for the triple tanh vertical resolution.   
+
 
 
 ##License
