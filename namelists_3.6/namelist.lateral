@@ -61,12 +61,12 @@
    bn_tem = 'TS_OBC', 168,        'votemper', .true.,  .true.,  'yearly',  '',        ''
    bn_sal = 'TS_OBC', 168,        'vosaline', .true.,  .true.,  'yearly',  '',        ''
 
-   cn_dir = 'boundary_conditions/'
+   cn_dir = 'open_boundaries/'
 &end
 
 &nambdy_tide     ! tidal forcing at open boundaries
 !-----------------------------------------------------------------------
-   filtide       = '/data/nsoontie/MEOPAR/2Ddomain/boundary_conditions/Salish2D_3.6_'
+   filtide       = 'open_boundaries/Salish2D_3.6_'
    ln_bdytide_conj = .false.
 &end
 
