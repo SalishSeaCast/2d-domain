@@ -53,9 +53,10 @@ namelists:
   - namelist.tracer
   - namelist.dynamics
   - namelist.vertical
-  - namelist.compute
+  - namelist.diagnostics
+  - namelist.misc
 
 output:
   # If relative, paths are taken from current directory
-  domain: ../../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/domain_def.xml
-  fields: ../../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/field_def.xml
+  domain: ../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/domain_def.xml
+  fields: ../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/field_def.xml
