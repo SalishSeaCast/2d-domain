@@ -14,7 +14,7 @@ config_name: SalishSea2D
 # i (longitude) and j (latitude) directions?
 # These values are used to set the nammpp namelist jpni & jpnj values
 # and to set the number of processors and nodes in the PBS script
-MPI decomposition: 1x7
+MPI decomposition: 3x5
 
 # For runs on systems that use qsub/PBS/TORQUE
 run_id: example
@@ -24,10 +24,10 @@ email: nsoontie@eos.ubc.ca
 
 paths:
   # If relative, paths are taken from current directory
-  NEMO-code: ../../NEMO-3.6-code/
-  XIOS: ../../XIOS/
-  forcing: ../
-  runs directory: ../../SalishSea/
+  NEMO-code: ../../../NEMO-3.6-code/
+  XIOS: ../../../XIOS/
+  forcing: ../../
+  runs directory: ../../../SalishSea/
 
 grid:
   # If relative, paths are taken from the grid/ directory in the forcing
@@ -37,29 +37,34 @@ grid:
 
 forcing:
   # If relative, paths are taken from forcing path above
-  atmospheric: /ocean/sallen/allen/research/MEOPAR/Operational/
-  initial conditions: initial_conditions/
+  NEMO-atmos: 
+     link to: /dev/null
+  initial_strat:
+    link to: initial_conditions/
   # The path and name of a restart file may be used as initial conditions
   # initial conditions: /ocean/dlatorne/MEOPAR/SalishSea/results/spin-up/8sep17sep/SalishSea_02825280_restart.nc
-  open boundaries: boundary_conditions/
-  rivers: rivers/
+  open_boundaries: 
+    link to: boundary_conditions/
+  rivers: 
+    link to: rivers/
 
 namelists:
   # If relative, paths are taken from current directory
-  - namelist.time
-  - namelist.domain
-  - namelist.surface
-  - namelist.lateral
-  - namelist.bottom
-  - namelist.tracer
-  - namelist.dynamics
-  - namelist.vertical
-  - namelist.diagnostics
-  - namelist.misc
+  namelist_cfg:
+    - ../namelist.time
+    - ../namelist.domain
+    - ../namelist.surface
+    - ../namelist.lateral
+    - ../namelist.bottom
+    - ../namelist.tracer
+    - ../namelist.dynamics
+    - ../namelist.vertical
+    - ../namelist.diagnostics
+    - ../namelist.misc
 
 output:
   # If relative, paths are taken from current directory
-  domain: ../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/domain_def.xml
-  fields: ../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/field_def.xml
+  domain: ../../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/domain_def.xml
+  fields: ../../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/field_def.xml
   separate XIOS server: True
   XIOS servers: 1
