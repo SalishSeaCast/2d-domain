@@ -1,0 +1,70 @@
+# salishsea command processor run description example for NEMO-3.6
+#
+# Salish Sea 2D domain with:
+#   S4-1 uniform initial T and S
+#   Open, unstructured left boundary
+#     Tidal forcing
+#     Masson-based T+S
+#  Rivers run-off forcing - constant dishcarge at right end
+#  Constant windstress applied at surface
+
+config_name: SalishSea2D_res
+
+# How is the domain to be distributed over the processors in the
+# i (longitude) and j (latitude) directions?
+# These values are used to set the nammpp namelist jpni & jpnj values
+# and to set the number of processors and nodes in the PBS script
+MPI decomposition: 3x5
+
+# For runs on systems that use qsub/PBS/TORQUE
+run_id: example
+walltime: 10:00:00
+# If missing, email address is set to ${USER}@eos.ubc.ca
+email: nsoontie@eos.ubc.ca
+
+paths:
+  # If relative, paths are taken from current directory
+  NEMO-code: ../../../NEMO-3.6-code/
+  XIOS: ../../../XIOS/
+  forcing: ../../
+  runs directory: ../../../SalishSea/
+
+grid:
+  # If relative, paths are taken from the grid/ directory in the forcing
+  # path above
+  coordinates: /dev/null
+  bathymetry: bathy2D_36.nc
+
+forcing:
+  # If relative, paths are taken from forcing path above
+  NEMO-atmos: 
+     link to: /dev/null
+  initial_strat:
+    link to: vertical_resolution/trpl_tanh/
+  # The path and name of a restart file may be used as initial conditions
+  # initial conditions: /ocean/dlatorne/MEOPAR/SalishSea/results/spin-up/8sep17sep/SalishSea_02825280_restart.nc
+  open_boundaries: 
+    link to: vertical_resolution/trpl_tanh/
+  rivers: 
+    link to: rivers/
+
+namelists:
+  # If relative, paths are taken from current directory
+  namelist_cfg:
+    - ../namelist.time
+    - ../namelist.domain
+    - ../namelist.surface
+    - ../namelist.lateral
+    - ../namelist.bottom
+    - ../namelist.tracer
+    - ../namelist.dynamics.enst
+    - ../namelist.vertical
+    - ../namelist.diagnostics
+    - ../namelist.misc
+
+output:
+  # If relative, paths are taken from current directory
+  domain: ../../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/domain_def.xml
+  fields: ../../../NEMO-3.6-code/NEMOGCM/CONFIG/SHARED/field_def.xml
+  separate XIOS server: True
+  XIOS servers: 1
